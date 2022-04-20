@@ -76,6 +76,7 @@ AWS Lambda Golang runtime requires a flat folder with the executable generated o
 To deploy your application for the first time, run the following in your shell:
 
 ```bash
+make
 sam deploy --guided
 ```
 
