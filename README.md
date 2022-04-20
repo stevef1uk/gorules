@@ -39,6 +39,11 @@ make
 ```bash
 sam local start-api
 ```
+```bash
+curl -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{"TypeOfClaim": "Car Accident", "ExpenditureOfClaim": 1001 }' http://localhost:3000/hello
+curl -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{"TypeOfClaim": "Car Accident", "ExpenditureOfClaim": 100 }' http://localhost:3000/hello 
+curl -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{"TypeOfClaim": "-", "ExpenditureOfClaim": 10001 }' http://localhost:3000/hello
+```
 
 If the previous command ran successfully you should now be able to hit the following local endpoint to invoke your function `http://localhost:3000/hello`
 

@@ -22,6 +22,9 @@ var (
 )
 
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
+
+	var i = request.Body
+
 	resp, err := http.Get(DefaultHTTPGetAddress)
 	if err != nil {
 		return events.APIGatewayProxyResponse{}, err
@@ -40,7 +43,7 @@ func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 		return events.APIGatewayProxyResponse{}, ErrNoIP
 	}
 
-	var rulesOut = RunRules()
+	var rulesOut = RunRules(i)
 	return events.APIGatewayProxyResponse{
 		Body:       fmt.Sprintf("Hello, %v : %s", string(ip), rulesOut),
 		StatusCode: 200,

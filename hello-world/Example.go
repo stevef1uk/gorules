@@ -46,8 +46,11 @@ type Employee struct {
 	LastTime            time.Time
 }
 
-func RunRules() string {
+func RunRules(s string) string {
 	ret := ""
+
+	fmt.Println("RunRules Input = ", s)
+
 	table, _ := decisionTable.CreateDecisionTable().
 		SetName("Determine Employee").
 		SetDefinitionKey("determineEmployee").
@@ -96,12 +99,15 @@ func RunRules() string {
 	}
 
 	// Create Example Data
-	timeVal, err := time.Parse("2006-01-02T15:04:05", "2021-01-04T12:00:00")
-	claim := Claim{
+	//timeVal, err := time.Parse("2006-01-02T15:04:05", "2021-01-04T12:00:00")
+	/*claim := Claim{
 		TypeOfClaim:        "Car Accident",
 		ExpenditureOfClaim: 100,
 		TimeOfClaim:        timeVal,
-	}
+	} */
+	claim := Claim{}
+	json.Unmarshal([]byte(s), &claim)
+
 	employee := Employee{}
 
 	// CreateEngine Instance
