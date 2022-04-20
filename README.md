@@ -56,7 +56,7 @@ Events:
         Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
         Properties:
             Path: /hello
-            Method: get
+            Method: POST
 ```
 
 ## Packaging and deployment
