@@ -9,6 +9,7 @@ This is a sample template for gorules - Below is a brief explanation of what we 
 ├── hello-world                 <-- Source code for a lambda function
 │   ├── main.go                 <-- Lambda function code
 │   └── main_test.go            <-- Unit tests
+│   └── Example..go             <-- Example file from: https://github.com/global-soft-ba/decisionTable.git
 └── template.yaml
 ```
 
